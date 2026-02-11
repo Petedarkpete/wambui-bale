@@ -72,7 +72,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
                 <a 
-                  href="https://wa.me/254700000000?text=Hi! I'd like to get a quote for clothing bales"
+                  href="https://wa.me/254726076717?text=Hi! I'd like to get a quote for clothing bales"
                   className="btn-secondary inline-flex items-center justify-center"
                 >
                   <MessageCircle className="mr-2 w-5 h-5" />
@@ -197,7 +197,7 @@ export default function Home() {
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-blue-600">{bale.price}</span>
                     <a 
-                      href={`https://wa.me/254700000000?text=Hi! I'm interested in the ${bale.name} bale for ${bale.price}`}
+                      href={`https://wa.me/254726076717?text=Hi! I'm interested in the ${bale.name} bale for ${bale.price}`}
                       className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
                     >
                       Order Now
@@ -258,14 +258,14 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:+254700000000"
+              href="tel:+254726076717"
               className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <Phone className="mr-2 w-5 h-5" />
-              Call Now: +254 700 000 000
+              Call Now: +254 726 076 717
             </a>
             <a 
-              href="https://wa.me/254700000000?text=Hi! I'd like to learn more about your clothing bales"
+              href="https://wa.me/254726076717?text=Hi! I'd like to learn more about your clothing bales"
               className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <MessageCircle className="mr-2 w-5 h-5" />
