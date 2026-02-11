@@ -265,22 +265,24 @@ Message: ${formData.message}`
         <div className="mt-16">
           <div className="bg-white p-8 rounded-xl shadow-sm">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Visit Our Location</h3>
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-600 mb-2">Gikomba Market</h4>
-                <p className="text-gray-500">Nairobi, Kenya</p>
-                <p className="text-sm text-gray-400 mt-2">
-                  Interactive map integration would be implemented here
-                </p>
-              </div>
+            <div className="rounded-lg overflow-hidden h-96">
+              <iframe
+                width="90%"
+                height="90%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen={true}
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.631610594496!2d36.8336190935791!3d-1.2844452999999965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1136ee3d3e87%3A0xddd28795543ff541!2sMumbai%20Shopping%20Complex!5e0!3m2!1sen!2ske!4v1770819408384!5m2!1sen!2ske" 
+              >
+              </iframe>
             </div>
             <div className="mt-6 text-center">
               <p className="text-gray-600 mb-4">
                 Located in the heart of Gikomba Market, Kenya's largest second-hand clothing market.
               </p>
               <a 
-                href="https://maps.google.com/?q=Gikomba+Market+Nairobi"
+                href="https://maps.app.goo.gl/MFsefAkeb39igaAu6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
