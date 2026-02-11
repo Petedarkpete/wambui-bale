@@ -20,7 +20,7 @@ const bales = [
     id: 2,
     name: "Kids Assorted Bale",
     category: "kids",
-    price: 6400,
+    price: 6200,
     weight: "35kg",
     pieces: "100-120 pieces",
     description: "Colorful kids clothing for all ages - shirts, dresses, pants, and more",
