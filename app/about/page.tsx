@@ -27,7 +27,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <Image
-              src="/african-businesswoman-clothing-store.png"
+              src="/wambui-profile.jpeg"
               alt="Wambui - Founder"
               width={600}
               height={500}
