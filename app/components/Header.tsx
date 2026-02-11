@@ -51,7 +51,7 @@ export default function Header() {
               className="hidden sm:flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+254 700 000 000</span>
+              <span className="font-medium">+254 726 076717</span>
             </a>
             
             <button
@@ -78,11 +78,11 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="tel:+254700000000"
+                href="tel:+254726076717"
                 className="flex items-center space-x-2 text-blue-600 py-2"
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">+254 700 000 000</span>
+                <span className="font-medium">+254 726 076717</span>
               </a>
             </nav>
           </div>

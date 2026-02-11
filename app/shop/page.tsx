@@ -92,7 +92,7 @@ export default function Shop() {
 
   const handleOrderClick = (bale: typeof bales[0]) => {
     const message = `Hi! I'm interested in ordering the ${bale.name} bale for KSh ${bale.price.toLocaleString()}. Can you provide more details?`
-    const whatsappUrl = `https://wa.me/254700000000?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/254726076717?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 

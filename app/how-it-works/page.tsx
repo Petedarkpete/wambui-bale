@@ -7,7 +7,7 @@ export default function HowItWorks() {
       title: "Contact Us",
       description: "Call or WhatsApp us to discuss your needs. Tell us what type of bales you're looking for and your budget.",
       details: [
-        "Call +254 700 000 000",
+        "Call +254 726 076717",
         "WhatsApp for instant response",
         "Discuss your specific requirements",
         "Get personalized recommendations"

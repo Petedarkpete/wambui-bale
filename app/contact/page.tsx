@@ -25,7 +25,7 @@ Interested in: ${formData.baleType}
 
 Message: ${formData.message}`
     
-    const whatsappUrl = `https://wa.me/254700000000?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/254726076717?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -63,7 +63,7 @@ Message: ${formData.message}`
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+254 700 000 000</p>
+                    <p className="text-gray-600">+254 726 076717</p>
                     <p className="text-sm text-gray-500">Available 8 AM - 8 PM</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ Message: ${formData.message}`
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">WhatsApp</h4>
-                    <p className="text-gray-600">+254 700 000 000</p>
+                    <p className="text-gray-600">+254 726 076717</p>
                     <p className="text-sm text-gray-500">Quick responses guaranteed</p>
                   </div>
                 </div>
@@ -119,14 +119,14 @@ Message: ${formData.message}`
               <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h3>
               <div className="space-y-3">
                 <a 
-                  href="tel:+254700000000"
+                  href="tel:+254726076717"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
                 >
                   <Phone className="mr-2 w-5 h-5" />
                   Call Now
                 </a>
                 <a 
-                  href="https://wa.me/254700000000?text=Hi! I'd like to inquire about your clothing bales"
+                  href="https://wa.me/254726076717?text=Hi! I'd like to inquire about your clothing bales"
                   className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center"
                 >
                   <MessageCircle className="mr-2 w-5 h-5" />
@@ -171,7 +171,7 @@ Message: ${formData.message}`
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="+254 700 000 000"
+                      placeholder="+254 726 076717"
                     />
                   </div>
                 </div>

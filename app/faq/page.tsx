@@ -26,7 +26,7 @@ const faqs = [
     questions: [
       {
         question: "How do I place an order?",
-        answer: "You can place an order by calling us at +254 700 000 000 or messaging us on WhatsApp. Tell us what type of bales you need, and we'll guide you through the process and provide current availability and pricing."
+        answer: "You can place an order by calling us at +254 726 076717 or messaging us on WhatsApp. Tell us what type of bales you need, and we'll guide you through the process and provide current availability and pricing."
       },
       {
         question: "What payment methods do you accept?",
@@ -181,14 +181,14 @@ export default function FAQ() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:+254700000000"
+              href="tel:+254726076717"
               className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <Phone className="mr-2 w-5 h-5" />
-              Call: +254 700 000 000
+              Call: +254 726 076717
             </a>
             <a 
-              href="https://wa.me/254700000000?text=Hi! I have a question about your clothing bales"
+              href="https://wa.me/254726076717?text=Hi! I have a question about your clothing bales"
               className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <MessageCircle className="mr-2 w-5 h-5" />
