@@ -72,7 +72,7 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
                 <a 
-                  href="https://wa.me/254726076717?text=Hi! I'd like to get a quote for clothing bales"
+                  href="https://wa.me/254757270511?text=Hi! I'd like to get a quote for clothing bales"
                   className="btn-secondary inline-flex items-center justify-center"
                 >
                   <MessageCircle className="mr-2 w-5 h-5" />

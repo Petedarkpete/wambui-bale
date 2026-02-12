@@ -51,7 +51,7 @@ export default function Header() {
               className="hidden sm:flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+254 726 076717</span>
+              <span className="font-medium">+254 757 270 511</span>
             </a>
             
             <button
@@ -82,7 +82,7 @@ export default function Header() {
                 className="flex items-center space-x-2 text-blue-600 py-2"
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">+254 726 076717</span>
+                <span className="font-medium">+254 757 270 511</span>
               </a>
             </nav>
           </div>
