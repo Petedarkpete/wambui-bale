@@ -44,7 +44,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Contact Info & Mobile Menu Button */}
+          {/* Contact Info & Admin Link & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             <a
               href="tel:+254700000000"
@@ -53,6 +53,13 @@ export default function Header() {
               <Phone className="w-4 h-4" />
               <span className="font-medium">+254 700 000 000</span>
             </a>
+
+            <Link
+              href="/admin/images"
+              className="hidden sm:inline-block px-3 py-2 text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 rounded transition-colors"
+            >
+              Admin
+            </Link>
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,6 +91,13 @@ export default function Header() {
                 <Phone className="w-4 h-4" />
                 <span className="font-medium">+254 700 000 000</span>
               </a>
+              <Link
+                href="/admin/images"
+                className="px-3 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200 text-gray-700 rounded transition-colors inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Admin Panel
+              </Link>
             </nav>
           </div>
         )}
