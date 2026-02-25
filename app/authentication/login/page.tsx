@@ -58,6 +58,8 @@ export default function LoginPage() {
 
     const user = userCredential.user;
 
+    console.log("User logged in:", user);
+
     console.log("UID:", user.uid);
     console.log("Email:", user.email);
     console.log("Display Name:", user.displayName);
