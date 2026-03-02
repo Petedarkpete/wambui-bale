@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 //import the modal
-import { AddItemModal } from "@/app/components/Modals/AddItemModal";
+import { AddItemModal } from "@app/components/Modals/AddItemModal";
 
 // Mock Data
 const INITIAL_ORDERS = [
