@@ -1,12 +1,15 @@
-// lib/auth.ts (or app/lib/auth.ts)
-import { NextAuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+import jwt from "jsonwebtoken";
 
-export const authOptions: NextAuthOptions = {
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-  ],
-};
+const SECRET = process.env.JWT_SECRET!;
+
+export function signToken(payload: { id: number; email: string }) {
+  return jwt.sign(payload, SECRET, { expiresIn: "7d" });
+}
+
+export function verifyToken(token: string) {
+  try {
+    return jwt.verify(token, SECRET) as { id: number; email: string };
+  } catch {
+    return null;
+  }
+}

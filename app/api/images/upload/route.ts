@@ -1,66 +1,60 @@
+import { NextRequest, NextResponse } from 'next/server'
+import prisma from "@/lib/prisma"
 import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
-import { existsSync } from 'fs'
+import path from 'path'
 
-export async function POST(request: Request) {
-  try {
-    const formData = await request.formData()
-    const file = formData.get('file') as File
-    const category = formData.get('category') as string
+export async function POST(req: NextRequest) {
+  const formData = await req.formData()
 
-    if (!file) {
-      return Response.json({ error: 'No file provided' }, { status: 400 })
-    }
+  const categoryName = formData.get('category') as string
+  const name = formData.get('name') as string
+  const price = Number(formData.get('price'))
+  const weight = formData.get('weight') as string
+  const pieces = Number(formData.get('pieces'))
+  const origin = formData.get('origin') as string
+  const imageFiles = formData.getAll('images') as File[]
 
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
-    if (!allowedTypes.includes(file.type)) {
-      return Response.json(
-        { error: 'Invalid file type. Only JPEG, PNG, WebP, and GIF are allowed.' },
-        { status: 400 }
-      )
-    }
+  const slug = name
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
 
-    // Validate file size (max 5MB)
-    const maxSize = 5 * 1024 * 1024
-    if (file.size > maxSize) {
-      return Response.json(
-        { error: `File size exceeds 5MB limit. Current size: ${(file.size / 1024 / 1024).toFixed(2)}MB` },
-        { status: 400 }
-      )
-    }
+  // Find or create category
+  const categoryId = Number(formData.get('categoryId'))
 
-    // Create uploads directory if it doesn't exist
-    const uploadsDir = join(process.cwd(), 'public', 'uploads')
-    if (!existsSync(uploadsDir)) {
-      await mkdir(uploadsDir, { recursive: true })
-    }
-
-    // Generate unique filename with timestamp
-    const timestamp = Date.now()
-    const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_')
-    const filename = `${timestamp}-${originalName}`
-    const filepath = join(uploadsDir, filename)
-
-    // Convert file to buffer and write
-    const bytes = await file.arrayBuffer()
+  // Save images locally
+  const imageUrls: string[] = []
+  for (const image of imageFiles) {
+    const bytes = await image.arrayBuffer()
     const buffer = Buffer.from(bytes)
-    await writeFile(filepath, buffer)
-
-    // Return success response with image path
-    return Response.json({
-      success: true,
-      filename,
-      path: `/uploads/${filename}`,
-      size: file.size,
-      category: category || 'general',
-      uploadedAt: new Date().toISOString(),
-    })
-  } catch (error) {
-    console.error('Upload error:', error)
-    return Response.json(
-      { error: 'Failed to upload file' },
-      { status: 500 }
-    )
+    const filename = `${Date.now()}_${image.name}`
+    const uploadDir = path.join(process.cwd(), 'public', 'uploads')
+    await mkdir(uploadDir, { recursive: true })
+    await writeFile(path.join(uploadDir, filename), buffer)
+    imageUrls.push(`/uploads/${filename}`)
   }
+
+  // Create product with relations
+  const product = await prisma.product.create({
+    data: {
+      name,
+      slug,
+      price,
+      weight,
+      pieces,
+      origin,
+      categoryId,
+      images: {
+        create: imageUrls.map((url, index) => ({
+          url,
+          alt: name,
+          isPrimary: index === 0,
+        })),
+      },
+    },
+    include: { images: true, category: true },
+  })
+
+  return NextResponse.json(product)
 }

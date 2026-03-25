@@ -26,7 +26,7 @@ const faqs = [
     questions: [
       {
         question: "How do I place an order?",
-        answer: "You can place an order by calling us at +254 726 076717 or messaging us on WhatsApp. Tell us what type of bales you need, and we'll guide you through the process and provide current availability and pricing."
+        answer: "You can place an order by calling us at +254 757 270511 or messaging us on WhatsApp. Tell us what type of bales you need, and we'll guide you through the process and provide current availability and pricing."
       },
       {
         question: "What payment methods do you accept?",
@@ -171,24 +171,24 @@ export default function FAQ() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-16 bg-blue-600 p-8 lg:p-12 rounded-2xl text-center">
-          <h3 className="text-3xl font-bold text-white mb-4">
+        <div className="mt-16 bg-orange-200 p-8 lg:p-12 rounded-2xl text-center">
+          <h3 className="text-3xl font-bold text-black mb-4">
             Still Have Questions?
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-black-100 mb-8 max-w-2xl mx-auto">
             Our team is here to help! Contact us directly for personalized assistance 
             with your clothing bale needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:+254726076717"
+              href="tel:+254757270511"
               className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <Phone className="mr-2 w-5 h-5" />
-              Call: +254 726 076717
+              Call: +254 757 270511
             </a>
             <a 
-              href="https://wa.me/254726076717?text=Hi! I have a question about your clothing bales"
+              href="https://wa.me/254757270511?text=Hi! I have a question about your clothing bales"
               className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors inline-flex items-center justify-center"
             >
               <MessageCircle className="mr-2 w-5 h-5" />

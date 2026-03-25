@@ -53,7 +53,7 @@ Message: ${formData.message}`
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-orange-50 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Get In Touch</h3>
               
               <div className="space-y-4">
@@ -115,7 +115,7 @@ Message: ${formData.message}`
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-orange-50 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h3>
               <div className="space-y-3">
                 <a 
@@ -138,7 +138,7 @@ Message: ${formData.message}`
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-orange-50 p-8 rounded-xl shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">

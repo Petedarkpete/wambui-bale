@@ -7,7 +7,7 @@ export default function HowItWorks() {
       title: "Contact Us",
       description: "Call or WhatsApp us to discuss your needs. Tell us what type of bales you're looking for and your budget.",
       details: [
-        "Call +254 726 076717",
+        "Call +254 757 270511",
         "WhatsApp for instant response",
         "Discuss your specific requirements",
         "Get personalized recommendations"
@@ -79,7 +79,7 @@ export default function HowItWorks() {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-blue-600 mb-1">
+                    <div className="text-sm font-medium text-orange-600 mb-1">
                       Step {index + 1}
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900">{step.title}</h2>
@@ -174,7 +174,7 @@ export default function HowItWorks() {
           </div>
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Delivery Costs</h3>
-            <div className="bg-white border rounded-xl p-6">
+            <div className="bg-orange-50 border rounded-xl p-6">
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-700">Within Nairobi</span>
@@ -200,11 +200,11 @@ export default function HowItWorks() {
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-blue-600 p-8 lg:p-12 rounded-2xl">
-          <h3 className="text-3xl font-bold text-white mb-4">
+        <div className="text-center bg-orange-200 p-8 lg:p-12 rounded-2xl">
+          <h3 className="text-3xl font-bold text-black mb-4">
             Ready to Get Started?
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-black-100 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your clothing bale needs. Our team is ready to help you find the perfect bales for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
