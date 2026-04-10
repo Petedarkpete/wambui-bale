@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -33,8 +33,8 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User registered:", userCredential.user);
+      // const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // console.log("User registered:", userCredential.user);
       
       // Redirect to dashboard or home page
       router.push("/dashboard");
