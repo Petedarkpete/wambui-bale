@@ -172,7 +172,7 @@ export default function Home() {
               Featured Bales
             </h2>
             <p className="text-xl text-gray-600">
-              Check out our most popular clothing bales this month
+              Check out our mosts populasr clothing bales this month
             </p>
           </div>
           
