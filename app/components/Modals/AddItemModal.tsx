@@ -102,7 +102,7 @@ export const AddItemModal = ({ onClose, product }: Props) => {
           formData.append('images', image)
         }
 
-        const res = await fetch('/api/images/upload', {
+        const res = await fetch('/api/products', {
           method: 'POST',
           body: formData,
         })

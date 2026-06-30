@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -31,7 +31,7 @@ model Product {
   name        String
   slug        String         @unique
   description String?
-  price       Decimal        @db.Decimal(10, 2)
+  price       Float                        // ✅ changed from Decimal
   weight      String?
   pieces      Int?
   origin      String?
