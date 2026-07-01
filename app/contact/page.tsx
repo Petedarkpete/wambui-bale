@@ -348,30 +348,46 @@ Message: ${formData.message}`
       return
     }
 
-    const canvas = await html2canvas(ticketRef.current, {
-      scale: 2,
-      backgroundColor: '#ffffff'
-    })
+    // Clone the ticket into an offscreen fixed-size wrapper to ensure
+    // the same pixel dimensions are captured on mobile and desktop.
+    const original = ticketRef.current
+    const clone = original.cloneNode(true) as HTMLElement
+    clone.style.width = '540px'
+    clone.style.maxWidth = '540px'
+    clone.style.boxSizing = 'border-box'
+
+    const wrapper = document.createElement('div')
+    wrapper.style.position = 'absolute'
+    wrapper.style.top = '-99999px'
+    wrapper.style.left = '0'
+    wrapper.style.width = '540px'
+    wrapper.style.padding = '0'
+    wrapper.style.background = '#ffffff'
+    wrapper.appendChild(clone)
+    document.body.appendChild(wrapper)
+
+    // Wait for fonts/images to load
+    if ((document as any).fonts && (document as any).fonts.ready) {
+      try { await (document as any).fonts.ready } catch (e) { /* ignore */ }
+    }
+
+    const canvas = await html2canvas(clone, { scale: 2, backgroundColor: '#ffffff', useCORS: true })
     const imgData = canvas.toDataURL('image/png')
+
+    // Cleanup wrapper
+    document.body.removeChild(wrapper)
+
     // Create a larger PDF page and center the ticket image at half the page width
     const pageWidth = 900
     const pageHeight = 600
-    const doc = new jsPDF({
-      orientation: 'landscape',
-      unit: 'px',
-      format: [pageWidth, pageHeight]
-    })
-
-    // White background
+    const doc = new jsPDF({ orientation: 'landscape', unit: 'px', format: [pageWidth, pageHeight] })
     doc.setFillColor(255, 255, 255)
     doc.rect(0, 0, pageWidth, pageHeight, 'F')
 
-    // Make the ticket occupy half the page width and keep aspect ratio
     const imgTargetWidth = Math.floor(pageWidth * 0.5)
     const imgTargetHeight = (canvas.height * imgTargetWidth) / canvas.width
     const left = Math.round((pageWidth - imgTargetWidth) / 2)
     const top = Math.round((pageHeight - imgTargetHeight) / 2)
-
     doc.addImage(imgData, 'PNG', left, top, imgTargetWidth, imgTargetHeight)
 
     const fileName = `WambuiBales-Ticket-${generatedTicket.name.replace(/\s+/g, '_')}.pdf`
