@@ -293,6 +293,46 @@ Message: ${formData.message}`
             </div>
           </div>
         </div>
+
+        <div className="mt-16">
+          <div className="bg-white p-8 rounded-xl shadow-sm max-w-xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Generate Payment Receipt</h3>
+            <form onSubmit={handleGenerateTicket} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Payer Name
+                </label>
+                <input
+                  type="text"
+                  value={payerName}
+                  onChange={(e) => setPayerName(e.target.value)}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="e.g. John Mwangi"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  M-Pesa Transaction Code
+                </label>
+                <input
+                  type="text"
+                  value={mpesaCode}
+                  onChange={(e) => setMpesaCode(e.target.value.toUpperCase())}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="e.g. QFT7XR2K9P"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition"
+              >
+                Generate Ticket PDF
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   )
